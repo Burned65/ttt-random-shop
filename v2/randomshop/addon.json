@@ -1,0 +1,11 @@
+{
+	"title"		:	"[TTT] RandomShop",
+	"type"		:	"ServerContent",
+	"tags"		:	[ "realism", "roleplay" ],
+	"ignore"	:
+	[
+		"*.psd",
+		"*.vcproj",
+		"*.svn*"
+	]
+}
