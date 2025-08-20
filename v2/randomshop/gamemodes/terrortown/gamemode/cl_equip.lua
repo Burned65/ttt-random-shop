@@ -233,7 +233,13 @@ local function TraitorMenuPopup()
    local tmpItems = GetEquipmentForRole(ply:GetRole())
    local Yolo
    local items = {}
-   local rs_number_cvar = GetConVar( "sv_randomshop_items") --Serverside Convar to determin the number of items in shop
+   local rs_number_cvar = 0;
+   if LocalPlayer():GetTraitor() then
+      rs_number_cvar = GetConVar( "sv_randomshop_traitor_items") --Serverside Convar to determin the number of items in shop
+   end
+   if LocalPlayer():GetDetective() then
+      rs_number_cvar = GetConVar( "sv_randomshop_detective_items")
+   end
    local rs_radar_cvar = GetConVar( "sv_randomshop_include_radar") --Serverside Convar to determin the number of items in shop
    local rs_armour_cvar = GetConVar( "sv_randomshop_include_armour") --Serverside Convar to determin the number of items in shop
    local itemnumber_int = (rs_number_cvar:GetInt()-1)       --Subtract 1 because we start counting from 0
